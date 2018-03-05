@@ -7,7 +7,6 @@ import java.util.Collection;
 
 @Entity
 public class Recipe implements Serializable {
-    private static final long serialVersionID = 56498795462246L;
 
     @Id
     @GeneratedValue

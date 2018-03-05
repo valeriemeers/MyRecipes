@@ -7,14 +7,13 @@ import java.util.Collection;
 
 @Entity
 public class Component implements Serializable {
-    private static final long serialVersionID = 56498795462258L;
 
     @Id
     @GeneratedValue
     private Long id;
 
     private String name;
-    @ElementCollection
+
     @OneToMany(mappedBy = "component", cascade = CascadeType.ALL)
     private Collection<Ingredient> ingredients = new ArrayList<>();
     private String instructions;
@@ -27,6 +26,22 @@ public class Component implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Recipe getRecipe() {
+        return recipe;
+    }
+
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
     }
 
     public Collection<Ingredient> getIngredients() {

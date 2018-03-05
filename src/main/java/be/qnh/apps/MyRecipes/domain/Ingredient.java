@@ -4,9 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Embeddable
 public class Ingredient implements Serializable {
-    private static final long serialVersionID = 56498795462753L;
 
     @Id
     @GeneratedValue
@@ -16,6 +14,7 @@ public class Ingredient implements Serializable {
     private String name;
     private String quantity;
 
+    @ManyToOne
     private Component component;
 
     public Long getId() {
