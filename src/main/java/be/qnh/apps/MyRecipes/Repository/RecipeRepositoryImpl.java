@@ -153,16 +153,15 @@ public class RecipeRepositoryImpl implements RecipeRepository {
         recipeDB.setServingSize(recipe.getServingSize());
         recipeDB.setTime(recipe.getTime());
         recipeDB.setSource(recipe.getSource());
-        RecipeRepository.save(recipeDB);
+        Recipe updated= RecipeRepository.save(recipeDB);
 
-        return 1;
-
+        return updated!=null?1:0;
     }
 
     @Override
     public int deleteRecipe(Long id) {
         Recipe recipeDB = RecipeRepository.findById(id);
         RecipeRepository.delete(recipeDB);
-        return 1;
+       return 1;
     }
 }
