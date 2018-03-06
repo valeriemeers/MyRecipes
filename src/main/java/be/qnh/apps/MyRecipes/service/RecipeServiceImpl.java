@@ -1,5 +1,6 @@
 package be.qnh.apps.MyRecipes.service;
 
+import be.qnh.apps.MyRecipes.Repository.RecipeRepository;
 import be.qnh.apps.MyRecipes.domain.Recipe;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,7 @@ public class RecipeServiceImpl implements RecipeService{
 
     @Override
     public List<Recipe> findAll() {
-        return null;
+        return repository.findAll();
     }
 
     @Override

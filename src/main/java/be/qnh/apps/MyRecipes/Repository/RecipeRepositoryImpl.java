@@ -20,12 +20,12 @@ public class RecipeRepositoryImpl implements RecipeRepository {
 
     @Override
     public List<Recipe> findAll() {
-        return null;
+        return repository.findAll();
     }
 
     @Override
     public Recipe findRecipeByName(String name) {
-        return null;
+        return repository.findRecipeByName();
     }
 
     @Override

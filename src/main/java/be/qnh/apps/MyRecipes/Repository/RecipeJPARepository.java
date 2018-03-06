@@ -6,5 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface RecipeJPARepository extends JpaRepository<Recipe, Long> {
 
+    public Recipe findRecipeByName();
 
 }
