@@ -27,7 +27,7 @@ public class Recipe implements Serializable {
     private Timing time = new Timing();
 
     @Basic(optional = false)
-    @ElementCollection
+    @OneToMany
     private List<Component> component= new ArrayList<>();
 
     //constructors

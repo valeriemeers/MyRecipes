@@ -11,28 +11,28 @@ public interface RecipeService {
 
     List<Recipe> findAll();
     Recipe findByName(String name);
-    Recipe findById(Long id);
+//    Recipe findById(Long id);
 
-    List<Recipe> findByIngredient(String ingredient);
+//    List<Recipe> findByIngredient(String ingredient);
     List<Ingredient> findAllIngredients(String name);
 
-    List<Recipe> findByCourse(String course);
+//    List<Recipe> findByCourse(String course);
     Set<String> findAllCourses();
 
-    List<Recipe> findByCategory(String category);
+//    List<Recipe> findByCategory(String category);
     Set<String> findAllCategories();
 
-    List<Recipe> findByEvaluation(int evaluation);
+//    List<Recipe> findByEvaluation(int evaluation);
     Set<Integer> findAllEvaluations();
 
-    List<Recipe> findByLevel(String level);
+//    List<Recipe> findByLevel(String level);
     Set<String> findAllLevels();
 
-    List<Recipe> findByKitchen(String kitchen);
+//    List<Recipe> findByKitchen(String kitchen);
     Set<String> findAllKitchens();
 
-    int updateRecipe(Long id, Recipe recipe);
-
-    int deleteRecipe (Long id);
+//    int updateRecipe(Long id, Recipe recipe);
+//
+//    int deleteRecipe (Long id);
 
 }

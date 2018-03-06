@@ -33,80 +33,80 @@ public class RecipeServiceImpl implements RecipeService {
         return repository.findByName(name);
     }
 
-    @Override
-    public Recipe findById(Long id) {
-        return repository.findById(id);
-    }
+//    @Override
+//    public Recipe findById(Long id) {
+//        return repository.findById(id);
+//    }
 
-    @Override
-    public List<Recipe> findByIngredient(String ingredient) {
-        return repository.findByIngredient(ingredient);
-    }
+//    @Override
+//    public List<Recipe> findByIngredient(String ingredient) {
+//        return repository.findByIngredient(ingredient);
+//    }
 
     @Override
     public List<Ingredient> findAllIngredients(String name) {
         return repository.findAllIngredients(name);
     }
 
-    @Override
-    public List<Recipe> findByCourse(String course) {
-        return repository.findByCourse(course);
-    }
+//    @Override
+//    public List<Recipe> findByCourse(String course) {
+//        return repository.findByCourse(course);
+//    }
 
     @Override
     public Set<String> findAllCourses() {
         return repository.findAllCourses();
     }
 
-    @Override
-    public List<Recipe> findByCategory(String category) {
-        return repository.findByCategory(category);
-    }
+//    @Override
+//    public List<Recipe> findByCategory(String category) {
+//        return repository.findByCategory(category);
+//    }
 
     @Override
     public Set<String> findAllCategories() {
         return repository.findAllCategories();
     }
 
-    @Override
-    public List<Recipe> findByEvaluation(int evaluation) {
-        return repository.findByEvaluation(evaluation);
-    }
+//    @Override
+//    public List<Recipe> findByEvaluation(int evaluation) {
+//        return repository.findByEvaluation(evaluation);
+//    }
 
     @Override
     public Set<Integer> findAllEvaluations() {
         return repository.findAllEvaluations();
     }
 
-    @Override
-    public List<Recipe> findByLevel(String level) {
-        return repository.findByLevel(level);
-    }
+//    @Override
+//    public List<Recipe> findByLevel(String level) {
+//        return repository.findByLevel(level);
+//    }
 
     @Override
     public Set<String> findAllLevels() {
         return repository.findAllLevels();
     }
 
-    @Override
-    public List<Recipe> findByKitchen(String kitchen) {
-        return repository.findByKitchen(kitchen);
-    }
+//    @Override
+//    public List<Recipe> findByKitchen(String kitchen) {
+//        return repository.findByKitchen(kitchen);
+//    }
 
     @Override
     public Set<String> findAllKitchens() {
         return repository.findAllKitchens();
     }
 
-    @Override
-    public int updateRecipe(Long id, Recipe recipe) {
-        int update=repository.updateRecipe(id, recipe);
-        return update!=0?1:0;
-    }
+//    @Override
+//    public int updateRecipe(Long id, Recipe recipe) {
+//        int update=repository.updateRecipe(id, recipe);
+//        return update!=0?1:0;
+//    }
 
-    @Override
-    public int deleteRecipe(Long id) {
-        int delete = repository.deleteRecipe(id);
-        return delete != 0 ? 1 : 0;
-    }
+//    @Override
+//    public int deleteRecipe(Long id) {
+//        int delete = repository.deleteRecipe(id);
+//        return delete != 0 ? 1 : 0;
+//    }
 }

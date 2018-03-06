@@ -1,10 +1,16 @@
 package be.qnh.apps.MyRecipes.domain;
 
-import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
-@Embeddable
+@Entity
 public class Ingredient {
+
+    @Id
+    @GeneratedValue
+    private Long id;
 
     @NotNull
     private String name;

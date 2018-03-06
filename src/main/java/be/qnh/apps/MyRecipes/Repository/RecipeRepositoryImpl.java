@@ -30,16 +30,13 @@ public class RecipeRepositoryImpl implements RecipeRepository {
         return RecipeRepository.findByName(name);
     }
 
-    @Override
-    public Recipe findById(Long id) {
-        return RecipeRepository.findById(id);
-    }
 
-    @Override
-    public List<Recipe> findByIngredient(String ingredient) {
-        List<Recipe> recipeWithIngredient= RecipeRepository.findByIngredient(ingredient);
-        return recipeWithIngredient;
-    }
+
+//    @Override
+//    public List<Recipe> findByIngredient(String ingredient) {
+//        List<Recipe> recipeWithIngredient= RecipeRepository.findByIngredient(ingredient);
+//        return recipeWithIngredient;
+//    }
 
     @Override
     public List<Ingredient> findAllIngredients(String name) {
@@ -52,11 +49,11 @@ public class RecipeRepositoryImpl implements RecipeRepository {
         return ingredients;
     }
 
-    @Override
-    public List<Recipe> findByCourse(String course) {
-        List<Recipe> recipewithCourse= RecipeRepository.findByCourse(course);
-        return recipewithCourse;
-    }
+//    @Override
+//    public List<Recipe> findByCourse(String course) {
+//        List<Recipe> recipewithCourse= RecipeRepository.findByCourse(course);
+//        return recipewithCourse;
+//    }
 
     @Override
     public Set<String> findAllCourses() {
@@ -69,11 +66,11 @@ public class RecipeRepositoryImpl implements RecipeRepository {
         return courses;
     }
 
-    @Override
-    public List<Recipe> findByCategory(String category) {
-        List<Recipe> recipeWithCategory = RecipeRepository.findByCategory(category);
-        return recipeWithCategory;
-    }
+//    @Override
+//    public List<Recipe> findByCategory(String category) {
+//        List<Recipe> recipeWithCategory = RecipeRepository.findByCategory(category);
+//        return recipeWithCategory;
+//    }
 
     @Override
     public Set<String> findAllCategories() {
@@ -86,11 +83,11 @@ public class RecipeRepositoryImpl implements RecipeRepository {
         return categories;
     }
 
-    @Override
-    public List<Recipe> findByEvaluation(int evaluation) {
-        List<Recipe> recipeWithEvaluation = RecipeRepository.findByEvaluation(evaluation);
-        return recipeWithEvaluation;
-    }
+//    @Override
+//    public List<Recipe> findByEvaluation(int evaluation) {
+//        List<Recipe> recipeWithEvaluation = RecipeRepository.findByEvaluation(evaluation);
+//        return recipeWithEvaluation;
+//    }
 
     @Override
     public Set<Integer> findAllEvaluations() {
@@ -104,11 +101,11 @@ public class RecipeRepositoryImpl implements RecipeRepository {
         return evaluations;
     }
 
-    @Override
-    public List<Recipe> findByLevel(String level) {
-        List<Recipe> recipeWithLevel = RecipeRepository.findByLevel(level);
-        return recipeWithLevel;
-    }
+//    @Override
+//    public List<Recipe> findByLevel(String level) {
+//        List<Recipe> recipeWithLevel = RecipeRepository.findByLevel(level);
+//        return recipeWithLevel;
+//    }
 
     @Override
     public Set<String> findAllLevels() {
@@ -121,11 +118,11 @@ public class RecipeRepositoryImpl implements RecipeRepository {
         return levels;
     }
 
-    @Override
-    public List<Recipe> findByKitchen(String kitchen) {
-        List<Recipe> recipeWithKitchen=RecipeRepository.findByKitchen(kitchen);
-        return recipeWithKitchen;
-    }
+//    @Override
+//    public List<Recipe> findByKitchen(String kitchen) {
+//        List<Recipe> recipeWithKitchen=RecipeRepository.findByKitchen(kitchen);
+//        return recipeWithKitchen;
+//    }
 
     @Override
     public Set<String> findAllKitchens() {
@@ -138,30 +135,32 @@ public class RecipeRepositoryImpl implements RecipeRepository {
         return kitchens;
     }
 
-    @Override
-    public int updateRecipe(Long id, Recipe recipe) {
-        Recipe recipeDB=RecipeRepository.findById(id);
-        recipeDB.setCategory(recipe.getCategory());
-        recipeDB.setComponent(recipe.getComponent());
-        recipeDB.setCourse((recipe.getCourse()));
-        recipeDB.setDescription(recipe.getDescription());
-        recipeDB.setEvaluation(recipe.getEvaluation());
-        recipeDB.setId(recipe.getId());
-        recipeDB.setKitchen(recipe.getKitchen());
-        recipeDB.setLevel(recipe.getLevel());
-        recipeDB.setName(recipe.getName());
-        recipeDB.setServingSize(recipe.getServingSize());
-        recipeDB.setTime(recipe.getTime());
-        recipeDB.setSource(recipe.getSource());
-        Recipe updated= RecipeRepository.save(recipeDB);
+//    @Override
+//    public int updateRecipe(Long id, Recipe recipe) {
+//        Recipe recipeDB=RecipeRepository.findById(id);
+//        recipeDB.setCategory(recipe.getCategory());
+//        recipeDB.setComponent(recipe.getComponent());
+//        recipeDB.setCourse((recipe.getCourse()));
+//        recipeDB.setDescription(recipe.getDescription());
+//        recipeDB.setEvaluation(recipe.getEvaluation());
+//        recipeDB.setId(recipe.getId());
+//        recipeDB.setKitchen(recipe.getKitchen());
+//        recipeDB.setLevel(recipe.getLevel());
+//        recipeDB.setName(recipe.getName());
+//        recipeDB.setServingSize(recipe.getServingSize());
+//        recipeDB.setTime(recipe.getTime());
+//        recipeDB.setSource(recipe.getSource());
+//        Recipe updated= RecipeRepository.save(recipeDB);
+//
+//        return updated!=null?1:0;
 
-        return updated!=null?1:0;
-    }
+//        return 0;
+//    }
 
-    @Override
-    public int deleteRecipe(Long id) {
-        Recipe recipeDB = RecipeRepository.findById(id);
-        RecipeRepository.delete(recipeDB);
-       return 1;
-    }
+//    @Override
+//    public int deleteRecipe(Long id) {
+//        Recipe recipeDB = RecipeRepository.findById(id);
+//        RecipeRepository.delete(recipeDB);
+//       return 1;
+//    }
 }

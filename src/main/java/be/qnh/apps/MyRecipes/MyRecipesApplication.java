@@ -1,14 +1,8 @@
 package be.qnh.apps.MyRecipes;
 
-import be.qnh.apps.MyRecipes.domain.Component;
-import be.qnh.apps.MyRecipes.domain.Ingredient;
-import be.qnh.apps.MyRecipes.domain.Recipe;
-import be.qnh.apps.MyRecipes.domain.Timing;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @SpringBootApplication
 public class MyRecipesApplication {
