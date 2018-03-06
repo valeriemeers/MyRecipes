@@ -3,6 +3,7 @@ package be.qnh.apps.MyRecipes.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -15,6 +16,9 @@ public class Ingredient {
     @NotNull
     private String name;
     private String quantity;
+
+    @ManyToOne
+    private Component component;
 
     //constructors
     public Ingredient(){

@@ -1,15 +1,15 @@
-package be.qnh.apps.MyRecipes.service;
+package be.qnh.apps.MyRecipes.Repository;
 
 import be.qnh.apps.MyRecipes.domain.Recipe;
 
 import java.util.List;
 
-public interface RecipeService {
-    Recipe createRecipe(Recipe recipe);
+public interface RecipeRepositoryCustom {
+//    int createRecipe(Recipe recipe);
+//
+//    List<Recipe> findAll();
+//    Recipe findByName(String name);
 
-    List<Recipe> findAll();
-    Recipe findByName(String name);
-    Recipe findById(Long id);
 
     List<Recipe> findByIngredient(String ingredient);
 //    List<Ingredient> findAllIngredients(String name);
@@ -30,7 +30,6 @@ public interface RecipeService {
 //    Set<String> findAllKitchens();
 
 //    int updateRecipe(Long id, Recipe recipe);
-//
-//    int deleteRecipe (Long id);
 
+//    int deleteRecipe (Long id);
 }
