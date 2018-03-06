@@ -1,33 +1,35 @@
 package be.qnh.apps.MyRecipes.Repository;
 
+import be.qnh.apps.MyRecipes.domain.Ingredient;
 import be.qnh.apps.MyRecipes.domain.Recipe;
 
 import java.util.List;
+import java.util.Set;
 
 public interface RecipeRepository {
     int createRecipe(Recipe recipe);
 
     List<Recipe> findAll();
-    Recipe findRecipeByName(String name);
-    Recipe findRecipeById (Long id);
+    Recipe findByName(String name);
+    Recipe findById(Long id);
 
-    List<Recipe> findRecipeByIngredient(String ingredient);
-    // List<Ingredient> findAllIngredients();
+    List<Recipe> findByIngredient(String ingredient);
+    List<Ingredient> findAllIngredients(String name);
 
-    List<Recipe> findRecipeByCourse (String course);
-    List<String> findAllCourses();
+    List<Recipe> findByCourse(String course);
+    Set<String> findAllCourses();
 
-    List<Recipe> findRecipeByCategory (String category);
-    List<String> findAllCategories();
+    List<Recipe> findByCategory(String category);
+    Set<String> findAllCategories();
 
-    List<Recipe> findRecipeByEvaluation (int evaluation);
-    List<Integer> findAllEvaluations();
+    List<Recipe> findByEvaluation(int evaluation);
+    Set<Integer> findAllEvaluations();
 
-    List<Recipe> findRecipeByLevel( String level);
-    List<String> findAllLevels();
+    List<Recipe> findByLevel(String level);
+    Set<String> findAllLevels();
 
-    List<Recipe> findRecipeByKitchen (String kitchen);
-    List<String> findAllKitchens();
+    List<Recipe> findByKitchen(String kitchen);
+    Set<String> findAllKitchens();
 
     int updateRecipe(Long id, Recipe recipe);
 
