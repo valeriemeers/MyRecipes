@@ -1,61 +1,44 @@
 package be.qnh.apps.MyRecipes.domain;
 
-import javax.persistence.*;
-import java.io.Serializable;
+import javax.persistence.ElementCollection;
+import javax.persistence.Embeddable;
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.List;
 
-@Entity
-public class Component implements Serializable {
-
-    @Id
-    @GeneratedValue
-    private Long id;
+@Embeddable
+public class Component {
 
     private String name;
-
-    @OneToMany(mappedBy = "component", cascade = CascadeType.ALL)
-    private Collection<Ingredient> ingredients = new ArrayList<>();
     private String instructions;
 
-    private Recipe recipe;
+    @ElementCollection
+    private List<Ingredient> ingredients = new ArrayList<>();
 
-    public Long getId() {
-        return id;
+    //constructors
+    public Component(){
+    }
+    public Component (String name, String instructions, List<Ingredient> ingredients){
+        this.name=name;
+        this.instructions=instructions;
+        this.ingredients=new ArrayList<>();
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
+    //getters and setters
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
-    public Recipe getRecipe() {
-        return recipe;
-    }
-
-    public void setRecipe(Recipe recipe) {
-        this.recipe = recipe;
-    }
-
-    public Collection<Ingredient> getIngredients() {
+    public List<Ingredient> getIngredients() {
         return ingredients;
     }
-
-    public void setIngredients(Collection<Ingredient> ingredients) {
+    public void setIngredients(List<Ingredient> ingredients) {
         this.ingredients = ingredients;
     }
-
     public String getInstructions() {
         return instructions;
     }
-
     public void setInstructions(String instructions) {
         this.instructions = instructions;
     }
@@ -63,7 +46,6 @@ public class Component implements Serializable {
     @Override
     public String toString() {
         return "Component{" +
-                "id=" + id +
                 ", ingredients=" + ingredients +
                 ", instructions='" + instructions + '\'' +
                 '}';

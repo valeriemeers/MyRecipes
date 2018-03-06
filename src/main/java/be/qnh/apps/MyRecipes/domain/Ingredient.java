@@ -1,42 +1,32 @@
 package be.qnh.apps.MyRecipes.domain;
 
-import javax.persistence.*;
-import java.io.Serializable;
+import javax.persistence.Embeddable;
+import javax.validation.constraints.NotNull;
 
-@Entity
-public class Ingredient implements Serializable {
+@Embeddable
+public class Ingredient {
 
-    @Id
-    @GeneratedValue
-    private Long id;
-
-    @Basic(optional = false)
+    @NotNull
     private String name;
     private String quantity;
 
-    @ManyToOne
-    private Component component;
-
-    public Long getId() {
-        return id;
+    //constructors
+    public Ingredient(){
     }
-
-    public void setId(Long id) {
-        this.id = id;
+    public Ingredient(String name, String quantity){
+        this.name=name;
+        this.quantity=quantity;
     }
-
+    //getters and setters
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public String getQuantity() {
         return quantity;
     }
-
     public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
@@ -45,7 +35,6 @@ public class Ingredient implements Serializable {
     @Override
     public String toString() {
         return "Ingredient{" +
-                "id=" + id +
                 ", name='" + name + '\'' +
                 ", quantity='" + quantity + '\'' +
                 '}';
