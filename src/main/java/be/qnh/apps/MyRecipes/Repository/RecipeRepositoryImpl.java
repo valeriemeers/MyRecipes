@@ -16,7 +16,7 @@ public class RecipeRepositoryImpl implements RecipeRepositoryCustom {
 
     @Override
     public List<Recipe> findByIngredient(String ingredient) {
-        Query query = entityManager.createQuery("select i.component.recipe from Ingredient i where i.name = :ingredient"
+        Query query = entityManager.createQuery("select i.component.recipe from  Ingredient i where i.name = :ingredient"
                 , Recipe.class).setParameter("ingredient", ingredient);
 
         return query.getResultList();
