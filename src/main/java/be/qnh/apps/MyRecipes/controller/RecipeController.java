@@ -2,14 +2,13 @@ package be.qnh.apps.MyRecipes.controller;
 
 import be.qnh.apps.MyRecipes.domain.Recipe;
 import be.qnh.apps.MyRecipes.service.RecipeService;
-import be.qnh.apps.MyRecipes.service.RecipeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(name = "/recipes")
+@RequestMapping(path = "recipes")
 public class RecipeController {
 
     @Autowired
@@ -20,6 +19,13 @@ public class RecipeController {
     Iterable<Recipe> recipes = this.recipeService.findAll();
 
     return recipes;
+    }
+
+    @PostMapping
+    public ResponseEntity<Recipe> createRecipe(@RequestBody Recipe recipe){
+        recipeService.createRecipe(recipe);
+
+        return new ResponseEntity<>(recipe, HttpStatus.CREATED);
     }
 
 }
