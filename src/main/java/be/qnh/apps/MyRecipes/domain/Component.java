@@ -14,7 +14,8 @@ public class Component {
     private String name;
     private String instructions;
 
-    @OneToMany
+    @OneToMany (cascade = CascadeType.ALL)
+    @JoinColumn (name="ingredient_id")
     private List<Ingredient> ingredients = new ArrayList<>();
 
     @ManyToOne
