@@ -47,7 +47,7 @@ public class Recipe implements Serializable {
         this.servingSize=servingSize;
         this.evaluation=evaluation;
         this.time=time;
-        this.component=new ArrayList<>();
+        this.component=component;
     }
     //getters and setter
     public Long getId() {
