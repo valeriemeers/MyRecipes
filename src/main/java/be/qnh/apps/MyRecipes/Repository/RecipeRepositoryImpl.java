@@ -1,6 +1,7 @@
 package be.qnh.apps.MyRecipes.Repository;
 
 import be.qnh.apps.MyRecipes.domain.Recipe;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -22,10 +23,9 @@ public class RecipeRepositoryImpl implements RecipeRepositoryCustom {
         return query.getResultList();
     }
 
-
-//   @Autowired
+//    @Autowired
 //   private be.qnh.apps.MyRecipes.Repository.RecipeRepository RecipeRepository;
-//
+
 //    @Override
 //    public int createRecipe(Recipe recipe) {
 //        Recipe createdRecipe = RecipeRepository.saveAndFlush(recipe);
@@ -36,7 +36,7 @@ public class RecipeRepositoryImpl implements RecipeRepositoryCustom {
 //    public List<Recipe> findAll() {
 //        return RecipeRepository.findAll();
 //    }
-//
+
 //    @Override
 //    public Recipe findByName(String name) {
 //        return RecipeRepository.findByName(name);

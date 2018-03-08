@@ -27,7 +27,7 @@ public class Recipe implements Serializable {
     @Embedded
     private Timing time = new Timing();
 
-    @Basic(optional = false)
+    //@Basic(optional = false)
     @OneToMany (cascade = CascadeType.ALL)
     @JoinColumn (name="component_id")
     private List<Component> component= new ArrayList<>();
