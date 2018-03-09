@@ -17,14 +17,14 @@ public class RecipeRepositoryImpl implements RecipeRepositoryCustom {
 
     @Override
     public List<Recipe> findByIngredient(String ingredient) {
-        Query query = entityManager.createQuery("select i.component.recipe from  Ingredient i where i.name = :ingredient"
+        Query query = entityManager.createQuery("select i.component.recipe from Ingredient i where i.name = :ingredient"
                 , Recipe.class).setParameter("ingredient", ingredient);
 
         return query.getResultList();
     }
 
-//    @Autowired
-//   private be.qnh.apps.MyRecipes.Repository.RecipeRepository RecipeRepository;
+    @Autowired
+   private be.qnh.apps.MyRecipes.Repository.RecipeRepository RecipeRepository;
 
 //    @Override
 //    public int createRecipe(Recipe recipe) {
@@ -42,13 +42,6 @@ public class RecipeRepositoryImpl implements RecipeRepositoryCustom {
 //        return RecipeRepository.findByName(name);
 //    }
 
-
-
-//    @Override
-//    public List<Recipe> findByIngredient(String ingredient) {
-//        List<Recipe> recipeWithIngredient= RecipeRepositoryCustom.findByIngredient(ingredient);
-//        return recipeWithIngredient;
-//    }
 
 //    @Override
 //    public List<Ingredient> findAllIngredients(String name) {
