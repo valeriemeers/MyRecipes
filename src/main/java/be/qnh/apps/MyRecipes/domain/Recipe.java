@@ -7,6 +7,7 @@ import java.util.List;
 
 @Entity
 public class Recipe implements Serializable {
+    private static final long serialVersionUID=1L;
 
     @Id
     @GeneratedValue
@@ -26,8 +27,9 @@ public class Recipe implements Serializable {
     @Embedded
     private Timing time = new Timing();
 
-    @Basic(optional = false)
-    @OneToMany
+    //@Basic(optional = false)
+    @OneToMany (cascade = CascadeType.ALL)
+    @JoinColumn (name="component_id")
     private List<Component> component= new ArrayList<>();
 
     //constructors
@@ -45,7 +47,7 @@ public class Recipe implements Serializable {
         this.servingSize=servingSize;
         this.evaluation=evaluation;
         this.time=time;
-        this.component=new ArrayList<>();
+        this.component=component;
     }
     //getters and setter
     public Long getId() {

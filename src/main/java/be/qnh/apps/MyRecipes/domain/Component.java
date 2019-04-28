@@ -14,7 +14,8 @@ public class Component {
     private String name;
     private String instructions;
 
-    @OneToMany
+    @OneToMany (cascade = CascadeType.ALL)
+    @JoinColumn (name="ingredient_id")
     private List<Ingredient> ingredients = new ArrayList<>();
 
     @ManyToOne
@@ -28,7 +29,7 @@ public class Component {
     public Component (String name, String instructions, List<Ingredient> ingredients){
         this.name=name;
         this.instructions=instructions;
-        this.ingredients=new ArrayList<>();
+        this.ingredients=ingredients;
     }
 
     //getters and setters

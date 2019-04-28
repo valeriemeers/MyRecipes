@@ -1,6 +1,7 @@
 package be.qnh.apps.MyRecipes.Repository;
 
 import be.qnh.apps.MyRecipes.domain.Recipe;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -16,16 +17,15 @@ public class RecipeRepositoryImpl implements RecipeRepositoryCustom {
 
     @Override
     public List<Recipe> findByIngredient(String ingredient) {
-        Query query = entityManager.createQuery("select i.component.recipe from  Ingredient i where i.name = :ingredient"
+        Query query = entityManager.createQuery("select i.component.recipe from Ingredient i where i.name = :ingredient"
                 , Recipe.class).setParameter("ingredient", ingredient);
 
         return query.getResultList();
     }
 
+    @Autowired
+   private be.qnh.apps.MyRecipes.Repository.RecipeRepository RecipeRepository;
 
-//   @Autowired
-//   private be.qnh.apps.MyRecipes.Repository.RecipeRepository RecipeRepository;
-//
 //    @Override
 //    public int createRecipe(Recipe recipe) {
 //        Recipe createdRecipe = RecipeRepository.saveAndFlush(recipe);
@@ -36,19 +36,12 @@ public class RecipeRepositoryImpl implements RecipeRepositoryCustom {
 //    public List<Recipe> findAll() {
 //        return RecipeRepository.findAll();
 //    }
-//
+
 //    @Override
 //    public Recipe findByName(String name) {
 //        return RecipeRepository.findByName(name);
 //    }
 
-
-
-//    @Override
-//    public List<Recipe> findByIngredient(String ingredient) {
-//        List<Recipe> recipeWithIngredient= RecipeRepositoryCustom.findByIngredient(ingredient);
-//        return recipeWithIngredient;
-//    }
 
 //    @Override
 //    public List<Ingredient> findAllIngredients(String name) {

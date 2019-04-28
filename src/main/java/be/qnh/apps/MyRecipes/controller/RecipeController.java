@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(path = "recipes")
+@RequestMapping
 public class RecipeController {
 
     @Autowired
@@ -21,11 +21,10 @@ public class RecipeController {
     return recipes;
     }
 
-    @PostMapping
-    public ResponseEntity<Recipe> createRecipe(@RequestBody Recipe recipe){
+    @PostMapping("/create")
+    public ResponseEntity<Recipe> createRecipe(@RequestBody Recipe recipe) {
         recipeService.createRecipe(recipe);
-
         return new ResponseEntity<>(recipe, HttpStatus.CREATED);
-    }
 
+    }
 }

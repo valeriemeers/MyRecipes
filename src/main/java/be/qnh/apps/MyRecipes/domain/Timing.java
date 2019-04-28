@@ -7,6 +7,15 @@ public class Timing  {
     private int prepTime;
     private int cookTime;
 
+    //constructor
+    public Timing(){
+
+    }
+    public Timing(int prepTime, int cookTime){
+        this.prepTime=prepTime;
+        this.cookTime=cookTime;
+    }
+
     //getters and setter
     public int getPrepTime() {
         return prepTime;

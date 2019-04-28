@@ -85,7 +85,7 @@ public class RecipeServiceImpl implements RecipeService {
         timing.setCookTime(20);
 
         recept.setTime(timing);
-
+        recept.setComponent(componentList);
         recipeRepository.save(recept);
 
     }
